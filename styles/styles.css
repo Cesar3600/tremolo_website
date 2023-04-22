@@ -210,7 +210,7 @@ body {
   color: #696865;
 }
 
-@media screen and (min-width: 769px) and (max-width: 1399px) {
+@media screen and (min-width: 1150px) and (max-width: 1399px) {
   .tre__ini--album .album__content {
     gap: 2rem;
   }
@@ -224,12 +224,18 @@ body {
     padding: unset;
   }
 }
-@media screen and (min-width: 1150px) and (max-width: 1399px) {
+@media screen and (min-width: 769px) and (max-width: 1149px) {
+  .tre__header--content .logo img {
+    width: 133px;
+  }
+  .tre__header--content .tre__nav ul {
+    gap: 1rem;
+  }
   .tre__ini--album .album__content {
     gap: 2rem;
   }
   .tre__ini--album .album__content--left {
-    padding: 3rem 1rem;
+    padding: 0rem;
   }
   .tre__ini--album .album__content--left .description h2 {
     font-size: 38px;
@@ -270,6 +276,7 @@ body {
   }
   .tre__ini--album .album__content--right {
     width: 100%;
+    padding: unset;
   }
   .tre__ini--album .album__content--right img {
     width: 100%;
