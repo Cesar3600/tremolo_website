@@ -2,7 +2,8 @@
 
 $bgc_color1: #111;
 $bgc_color2: #222425;
-
+$SNbgc: #fff;
+$SNbgcHover: rgb(175, 175, 175);
 $bgc_header_gradient: linear-gradient(
   180deg,
   rgba(0, 0, 0, 1) 0%,
@@ -13,9 +14,18 @@ $bgc_header_gradient: linear-gradient(
 $ff: 'Merriweather', serif;
 $fc1: #fff;
 $f_upper: uppercase;
-$fz_nav: 1.3em;
+$fz_nav: 1.1em;
 $fz_subtitle: 42px;
 $fz_parr: 15px;
+
+//SOCIALNETWORK
+$SNside: 50px;
+$SNfooterSide: 30px;
+$SNsideMD: 60px;
+
+//SIZES
+$maxWidthContent: 1400px;
+$WfooterLogo: 265px;
 
 * {
   margin: 0;
@@ -27,7 +37,19 @@ body {
   background-color: $bgc_color1;
   font-family: $ff;
   color: $fc1;
+  //position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+.container {
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .tre {
@@ -39,6 +61,7 @@ body {
     height: auto;
     padding: 30px 35px 0px 35px;
     z-index: 10;
+    //order: 1;
     &--content {
       display: flex;
       justify-content: space-between;
@@ -46,6 +69,7 @@ body {
       & .logo {
         img {
           width: 233px;
+          cursor: pointer;
         }
       }
       & .tre__nav {
@@ -61,8 +85,9 @@ body {
               text-decoration: none;
               letter-spacing: 0.1em;
               font-size: $fz_nav;
+              transition: 0.2s ease all;
               &:hover {
-                color: red;
+                color: #91291c;
               }
             }
           }
@@ -71,10 +96,11 @@ body {
     }
   }
   &__ini {
-    position: absolute;
+    //position: absolute;
     background-color: $bgc_color2;
     display: flex;
     flex-direction: column;
+    //order: 2;
     &--hero {
       img {
         width: 100vw;
@@ -90,43 +116,246 @@ body {
       & .album__content {
         display: flex;
         flex-direction: row;
-        max-width: 1400px;
+        max-width: $maxWidthContent;
         width: 100%;
         justify-content: space-between;
-        padding: 5rem 0;
+        padding: 5rem 1rem;
         gap: 8rem;
         &--left {
           width: 50%;
           display: flex;
           justify-content: center;
           align-items: flex-start;
-          padding: 6rem 0;
+          padding: 6rem 1rem;
           &--centered {
             display: flex;
             flex-direction: column;
-            gap: 1.5rem;
-            h2 {
-              font-size: $fz_subtitle;
-              font-weight: 700;
-              font-style: normal;
-              color: $fc1;
-              line-height: 55px;
+            gap: 3rem;
+            & .description {
+              display: flex;
+              flex-direction: column;
+              gap: 1rem;
+              h2 {
+                font-size: $fz_subtitle;
+                font-weight: 700;
+                font-style: normal;
+                color: $fc1;
+                line-height: 55px;
+                text-transform: uppercase;
+              }
+              p {
+                font-size: $fz_parr;
+                font-weight: 400;
+                font-style: normal;
+                color: $fc1;
+                line-height: 27px;
+                text-align: justify;
+              }
             }
-            p {
-              font-size: $fz_parr;
-              font-weight: 400;
-              font-style: normal;
-              color: $fc1;
-              line-height: 27px;
+            .socialnetwork {
+              display: flex;
+              justify-content: center;
+              background-color: $bgc_color2;
+              &__content {
+                ul {
+                  display: flex;
+                  flex-direction: row;
+                  gap: 0.9rem;
+                  li {
+                    list-style: none;
+                    a {
+                      font-size: 1.5rem;
+                      text-decoration: none;
+                      i {
+                        color: rgb(27, 27, 27);
+                        font-size: 1.7rem;
+                        background-color: $SNbgc;
+                        width: $SNside;
+                        height: $SNside;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        border-radius: 5px;
+                        transition: 0.2s ease all;
+                        &:hover {
+                          background-color: $SNbgcHover;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
             }
           }
         }
         &--right {
           width: 50%;
+          padding: 1rem;
           &--image {
             img {
               width: calc(1400px / 2);
+              max-width: 100%;
+              object-fit: cover;
             }
+          }
+        }
+      }
+    }
+  }
+}
+
+.tre__footer {
+  bottom: 0;
+  z-index: 30;
+  width: 100%;
+  height: auto;
+  background-color: $bgc_color1;
+  display: flex;
+  justify-content: center;
+  &--container {
+    max-width: $maxWidthContent;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 2rem 5rem 2rem;
+    gap: 2rem;
+  }
+  &--logo {
+    img {
+      width: $WfooterLogo;
+      margin-bottom: 1rem;
+    }
+  }
+  &--socialnetwork {
+    &--container {
+      display: flex;
+      ul {
+        display: flex;
+        list-style: none;
+        gap: 0.4rem;
+        li {
+          a {
+            i {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              border-radius: 50%;
+              width: $SNfooterSide;
+              height: $SNfooterSide;
+              background-color: $SNbgc;
+              color: $bgc_color2;
+              transition: 0.3s ease all;
+              &:hover {
+                background-color: $SNbgcHover;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &--copyright {
+    font-size: 0.8rem;
+    color: #696865;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1399px) {
+  .tre {
+    &__ini--album {
+      & .album__content {
+        gap: 2rem;
+        &--left {
+          padding: 3rem 1rem;
+          .description {
+            h2 {
+              font-size: 38px;
+            }
+          }
+        }
+        &--right {
+          padding: unset;
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 1150px) and (max-width: 1399px) {
+  .tre {
+    &__ini--album {
+      & .album__content {
+        gap: 2rem;
+        &--left {
+          padding: 3rem 1rem;
+          .description {
+            h2 {
+              font-size: 38px;
+            }
+          }
+        }
+        &--right {
+          padding: unset;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .tre {
+    &__header {
+      &--content {
+        & .logo {
+          img {
+            width: 133px;
+          }
+        }
+        & .tre__nav {
+          ul {
+            gap: 1rem;
+          }
+        }
+      }
+    }
+    &__ini--album {
+      & .album__content {
+        flex-direction: column-reverse;
+        gap: 1rem;
+        &--left {
+          width: 100%;
+          padding: 1rem;
+          &--centered {
+            gap: 5rem;
+            & .description {
+              gap: 2rem;
+              h2 {
+                text-transform: uppercase;
+                text-align: center;
+              }
+            }
+            .socialnetwork {
+              &__content {
+                ul {
+                  li {
+                    a {
+                      i {
+                        font-size: 2rem;
+                        width: $SNsideMD;
+                        height: $SNsideMD;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        &--right {
+          width: 100%;
+          img {
+            width: 100%;
+            max-width: unset;
           }
         }
       }

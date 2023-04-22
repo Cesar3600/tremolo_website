@@ -8,7 +8,18 @@ body {
   background-color: #111;
   font-family: "Merriweather", serif;
   color: #fff;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+.container {
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .tre__header {
@@ -27,6 +38,7 @@ body {
 }
 .tre__header--content .logo img {
   width: 233px;
+  cursor: pointer;
 }
 .tre__header--content .tre__nav {
   text-transform: uppercase;
@@ -43,13 +55,13 @@ body {
   color: #fff;
   text-decoration: none;
   letter-spacing: 0.1em;
-  font-size: 1.3em;
+  font-size: 1.1em;
+  transition: 0.2s ease all;
 }
 .tre__header--content .tre__nav ul li a:hover {
-  color: red;
+  color: #91291c;
 }
 .tre__ini {
-  position: absolute;
   background-color: #222425;
   display: flex;
   flex-direction: column;
@@ -71,7 +83,7 @@ body {
   max-width: 1400px;
   width: 100%;
   justify-content: space-between;
-  padding: 5rem 0;
+  padding: 5rem 1rem;
   gap: 8rem;
 }
 .tre__ini--album .album__content--left {
@@ -79,32 +91,190 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding: 6rem 0;
+  padding: 6rem 1rem;
 }
 .tre__ini--album .album__content--left--centered {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 3rem;
 }
-.tre__ini--album .album__content--left--centered h2 {
+.tre__ini--album .album__content--left--centered .description {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.tre__ini--album .album__content--left--centered .description h2 {
   font-size: 42px;
   font-weight: 700;
   font-style: normal;
   color: #fff;
   line-height: 55px;
+  text-transform: uppercase;
 }
-.tre__ini--album .album__content--left--centered p {
+.tre__ini--album .album__content--left--centered .description p {
   font-size: 15px;
   font-weight: 400;
   font-style: normal;
   color: #fff;
   line-height: 27px;
+  text-align: justify;
+}
+.tre__ini--album .album__content--left--centered .socialnetwork {
+  display: flex;
+  justify-content: center;
+  background-color: #222425;
+}
+.tre__ini--album .album__content--left--centered .socialnetwork__content ul {
+  display: flex;
+  flex-direction: row;
+  gap: 0.9rem;
+}
+.tre__ini--album .album__content--left--centered .socialnetwork__content ul li {
+  list-style: none;
+}
+.tre__ini--album .album__content--left--centered .socialnetwork__content ul li a {
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+.tre__ini--album .album__content--left--centered .socialnetwork__content ul li a i {
+  color: rgb(27, 27, 27);
+  font-size: 1.7rem;
+  background-color: #fff;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  transition: 0.2s ease all;
+}
+.tre__ini--album .album__content--left--centered .socialnetwork__content ul li a i:hover {
+  background-color: rgb(175, 175, 175);
 }
 .tre__ini--album .album__content--right {
   width: 50%;
+  padding: 1rem;
 }
 .tre__ini--album .album__content--right--image img {
   width: 700px;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.tre__footer {
+  bottom: 0;
+  z-index: 30;
+  width: 100%;
+  height: auto;
+  background-color: #111;
+  display: flex;
+  justify-content: center;
+}
+.tre__footer--container {
+  max-width: 1400px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 2rem 5rem 2rem;
+  gap: 2rem;
+}
+.tre__footer--logo img {
+  width: 265px;
+  margin-bottom: 1rem;
+}
+.tre__footer--socialnetwork--container {
+  display: flex;
+}
+.tre__footer--socialnetwork--container ul {
+  display: flex;
+  list-style: none;
+  gap: 0.4rem;
+}
+.tre__footer--socialnetwork--container ul li a i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  color: #222425;
+  transition: 0.3s ease all;
+}
+.tre__footer--socialnetwork--container ul li a i:hover {
+  background-color: rgb(175, 175, 175);
+}
+.tre__footer--copyright {
+  font-size: 0.8rem;
+  color: #696865;
+}
+
+@media screen and (min-width: 769px) and (max-width: 1399px) {
+  .tre__ini--album .album__content {
+    gap: 2rem;
+  }
+  .tre__ini--album .album__content--left {
+    padding: 3rem 1rem;
+  }
+  .tre__ini--album .album__content--left .description h2 {
+    font-size: 38px;
+  }
+  .tre__ini--album .album__content--right {
+    padding: unset;
+  }
+}
+@media screen and (min-width: 1150px) and (max-width: 1399px) {
+  .tre__ini--album .album__content {
+    gap: 2rem;
+  }
+  .tre__ini--album .album__content--left {
+    padding: 3rem 1rem;
+  }
+  .tre__ini--album .album__content--left .description h2 {
+    font-size: 38px;
+  }
+  .tre__ini--album .album__content--right {
+    padding: unset;
+  }
+}
+@media screen and (max-width: 768px) {
+  .tre__header--content .logo img {
+    width: 133px;
+  }
+  .tre__header--content .tre__nav ul {
+    gap: 1rem;
+  }
+  .tre__ini--album .album__content {
+    flex-direction: column-reverse;
+    gap: 1rem;
+  }
+  .tre__ini--album .album__content--left {
+    width: 100%;
+    padding: 1rem;
+  }
+  .tre__ini--album .album__content--left--centered {
+    gap: 5rem;
+  }
+  .tre__ini--album .album__content--left--centered .description {
+    gap: 2rem;
+  }
+  .tre__ini--album .album__content--left--centered .description h2 {
+    text-transform: uppercase;
+    text-align: center;
+  }
+  .tre__ini--album .album__content--left--centered .socialnetwork__content ul li a i {
+    font-size: 2rem;
+    width: 60px;
+    height: 60px;
+  }
+  .tre__ini--album .album__content--right {
+    width: 100%;
+  }
+  .tre__ini--album .album__content--right img {
+    width: 100%;
+    max-width: unset;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
