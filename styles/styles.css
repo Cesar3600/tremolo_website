@@ -36,6 +36,15 @@ body {
   justify-content: space-between;
   align-items: center;
 }
+.tre__header--content .tre__header--burguer {
+  display: none;
+}
+.tre__header--content .tre__header--close {
+  display: none;
+}
+.tre__header--content .logo {
+  z-index: 200;
+}
 .tre__header--content .logo img {
   width: 233px;
   cursor: pointer;
@@ -53,13 +62,24 @@ body {
 }
 .tre__header--content .tre__nav ul li a {
   color: #fff;
+  font-weight: bolder;
   text-decoration: none;
   letter-spacing: 0.1em;
   font-size: 1.1em;
-  transition: 0.2s ease all;
+  transition: 0s ease all;
 }
 .tre__header--content .tre__nav ul li a:hover {
-  color: #91291c;
+  color: #be3524;
+  font-weight: bolder;
+}
+.tre__header--content .tre__nav ul li a:active {
+  color: #be3524;
+}
+.tre__header--content .tre__nav ul li a.selected {
+  color: #be3524;
+}
+.tre__header--close {
+  display: none;
 }
 .tre__ini {
   background-color: #222425;
@@ -107,7 +127,7 @@ body {
   font-size: 42px;
   font-weight: 700;
   font-style: normal;
-  color: #fff;
+  color: #91291c;
   line-height: 55px;
   text-transform: uppercase;
 }
@@ -149,7 +169,7 @@ body {
   transition: 0.2s ease all;
 }
 .tre__ini--album .album__content--left--centered .socialnetwork__content ul li a i:hover {
-  background-color: rgb(175, 175, 175);
+  background-color: #91291c;
 }
 .tre__ini--album .album__content--right {
   width: 50%;
@@ -210,6 +230,137 @@ body {
   color: #696865;
 }
 
+.tre__music {
+  display: flex;
+  justify-content: center;
+  padding: 12rem 0rem 3rem 0rem;
+}
+.tre__music--container {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  padding: 0px 2rem;
+  max-width: 1400px;
+  width: 100%;
+}
+.tre__music--title h2 {
+  font-size: 42px;
+  text-transform: uppercase;
+  text-align: center;
+  color: #be3524;
+}
+.tre__music--albums {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  width: 100%;
+}
+.tre__music--albums--items img {
+  max-width: 100%;
+  width: 100%;
+}
+
+.tre__tour {
+  display: flex;
+  justify-content: center;
+  padding: 12rem 0rem 3rem 0rem;
+}
+.tre__tour--container {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  padding: 0px 2rem;
+  max-width: 1400px;
+  width: 100%;
+}
+.tre__tour--title h2 {
+  font-size: 42px;
+  text-transform: uppercase;
+  text-align: center;
+  color: #be3524;
+}
+.tre__tour--list {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  width: 100%;
+}
+.tre__tour--list--item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 1.7rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  gap: 3rem;
+  padding-bottom: 2rem;
+}
+.tre__tour--list--item--fecha p {
+  color: #be3524;
+}
+.tre__tour--list--item--lugar h3 {
+  text-transform: uppercase;
+  text-align: center;
+}
+.tre__tour--list--item--departamento p {
+  color: #a2a2a2;
+}
+
+.tre__contacto {
+  display: flex;
+  justify-content: center;
+  padding: 12rem 0rem 3rem 0rem;
+  background-color: #222425;
+}
+.tre__contacto--container {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  padding: 0px 2rem;
+  max-width: 1400px;
+  width: 100%;
+}
+.tre__contacto--title h2 {
+  font-size: 42px;
+  text-transform: uppercase;
+  text-align: center;
+}
+.tre__contacto--formulario {
+  display: flex;
+  flex-direction: row;
+  gap: 4rem;
+  width: 100%;
+}
+.tre__contacto--imagen {
+  max-width: 700px;
+}
+.tre__contacto--imagen img {
+  width: 100%;
+}
+.tre__contacto--info {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 4rem 0;
+}
+.tre__contacto--info--title h3 {
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: #be3524;
+}
+.tre__contacto--info--datos {
+  font-size: 15px;
+}
+.tre__contacto--info--datos p {
+  color: #fff;
+  text-transform: uppercase;
+  line-height: 1.8rem;
+}
+.tre__contacto--info--datos p a.links {
+  color: #a2a2a2;
+  text-underline-offset: 0.1em;
+  text-transform: capitalize;
+}
+
 @media screen and (min-width: 1150px) and (max-width: 1399px) {
   .tre__ini--album .album__content {
     gap: 2rem;
@@ -229,7 +380,7 @@ body {
     width: 133px;
   }
   .tre__header--content .tre__nav ul {
-    gap: 1rem;
+    gap: 1.2rem;
   }
   .tre__ini--album .album__content {
     gap: 2rem;
@@ -245,11 +396,97 @@ body {
   }
 }
 @media screen and (max-width: 768px) {
+  .tre__header {
+    z-index: 100;
+  }
+  .tre__header--content {
+    position: relative;
+  }
+  .tre__header--content .tre__header--burguer {
+    display: block;
+    z-index: 40;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: 0;
+  }
+  .tre__header--content .tre__header--burguer a {
+    text-decoration: none;
+  }
+  .tre__header--content .tre__header--burguer a i {
+    color: #91291c;
+    font-size: 2rem;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s ease all;
+  }
+  .tre__header--content .tre__header--burguer a :hover {
+    color: #91291c;
+  }
+  .tre__header--content .tre__header--burguer a :active {
+    color: #91291c;
+  }
+  .tre__header--content .tre__header--close {
+    display: none;
+    z-index: 40;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: 0;
+  }
+  .tre__header--content .tre__header--close a {
+    text-decoration: none;
+  }
+  .tre__header--content .tre__header--close a i {
+    color: #91291c;
+    font-size: 2rem;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s ease all;
+  }
+  .tre__header--content .tre__header--close a :hover {
+    color: #91291c;
+  }
+  .tre__header--content .tre__header--close a :active {
+    color: #91291c;
+  }
   .tre__header--content .logo img {
     width: 133px;
   }
+  .tre__header--content .tre__nav {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: #222425;
+    top: 0;
+    left: 100%;
+    transition: 0.3s ease all;
+  }
   .tre__header--content .tre__nav ul {
-    gap: 1rem;
+    flex-direction: column;
+    padding: 33% 2rem;
+    justify-content: flex-start;
+    gap: 2rem;
+    width: 100%;
+    height: 100vh;
+  }
+  .tre__header--content .tre__nav ul li {
+    display: flex;
+    justify-content: center;
+  }
+  .tre__header--content .tre__nav ul li a {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2rem;
+  }
+  .tre__header--content .tre__nav ul li a.selected {
+    color: #91291c;
   }
   .tre__ini--album .album__content {
     flex-direction: column-reverse;
@@ -281,6 +518,100 @@ body {
   .tre__ini--album .album__content--right img {
     width: 100%;
     max-width: unset;
+  }
+  .tre__tour--container {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    padding: 0px 2rem;
+    max-width: 1400px;
+    width: 100%;
+  }
+  .tre__tour--title h2 {
+    font-size: 42px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  .tre__tour--list {
+    display: flex;
+    flex-direction: column;
+    gap: 7rem;
+    width: 100%;
+  }
+  .tre__tour--list--item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: unset;
+  }
+  .tre__tour--list--item--fecha p {
+    font-size: 1.5rem;
+    color: #be3524;
+    text-transform: uppercase;
+  }
+  .tre__tour--list--item--lugar h3 {
+    font-size: 1.2em;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .tre__tour--list--item--departamento p {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    color: #a2a2a2;
+  }
+  .tre__contacto {
+    display: flex;
+    justify-content: center;
+    padding: 12rem 0rem 3rem 0rem;
+    background-color: #222425;
+  }
+  .tre__contacto--container {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    padding: 0px 2rem;
+    max-width: 1400px;
+    width: 100%;
+  }
+  .tre__contacto--title h2 {
+    font-size: 42px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  .tre__contacto--formulario {
+    flex-direction: column;
+  }
+  .tre__contacto--imagen {
+    max-width: 700px;
+  }
+  .tre__contacto--imagen img {
+    width: 100%;
+    height: 580px;
+    object-fit: cover;
+    object-position: bottom;
+  }
+  .tre__contacto--info {
+    text-align: center;
+  }
+}
+@media screen and (max-width: 540px) {
+  .tre__contacto--formulario {
+    gap: 1rem;
+  }
+  .tre__contacto--imagen {
+    max-width: 700px;
+  }
+  .tre__contacto--imagen img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    object-position: bottom;
+  }
+  .tre__contacto--info {
+    text-align: center;
   }
 }
 
