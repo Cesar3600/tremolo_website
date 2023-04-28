@@ -218,6 +218,7 @@ body {
               width: calc(1400px / 2);
               max-width: 100%;
               object-fit: cover;
+              box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.3);
             }
           }
         }
@@ -400,6 +401,7 @@ body {
     max-width: calc(1400px / 2);
     img {
       width: 100%;
+      box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.3);
     }
   }
   &--info {
@@ -433,6 +435,16 @@ body {
 
 @media screen and (min-width: 1150px) and (max-width: 1399px) {
   .tre {
+    &__header {
+      &--content {
+        & .tre__header--burguer {
+          display: none;
+        }
+        & .tre__header--close {
+          display: none;
+        }
+      }
+    }
     &__ini--album {
       & .album__content {
         gap: 2rem;
@@ -455,6 +467,12 @@ body {
   .tre {
     &__header {
       &--content {
+        & .tre__header--burguer {
+          display: none;
+        }
+        & .tre__header--close {
+          display: none;
+        }
         & .logo {
           img {
             width: 133px;

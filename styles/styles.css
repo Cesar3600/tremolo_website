@@ -179,6 +179,7 @@ body {
   width: 700px;
   max-width: 100%;
   object-fit: cover;
+  box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.3);
 }
 
 .tre__footer {
@@ -335,6 +336,7 @@ body {
 }
 .tre__contacto--imagen img {
   width: 100%;
+  box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.3);
 }
 .tre__contacto--info {
   display: flex;
@@ -362,6 +364,12 @@ body {
 }
 
 @media screen and (min-width: 1150px) and (max-width: 1399px) {
+  .tre__header--content .tre__header--burguer {
+    display: none;
+  }
+  .tre__header--content .tre__header--close {
+    display: none;
+  }
   .tre__ini--album .album__content {
     gap: 2rem;
   }
@@ -376,6 +384,12 @@ body {
   }
 }
 @media screen and (min-width: 769px) and (max-width: 1149px) {
+  .tre__header--content .tre__header--burguer {
+    display: none;
+  }
+  .tre__header--content .tre__header--close {
+    display: none;
+  }
   .tre__header--content .logo img {
     width: 133px;
   }
