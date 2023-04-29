@@ -433,6 +433,13 @@ body {
   }
 }
 
+.show {
+  display: block !important;
+}
+.hide {
+  display: hide !important;
+}
+
 @media screen and (min-width: 1150px) and (max-width: 1399px) {
   .tre {
     &__header {
@@ -520,6 +527,7 @@ body {
           a {
             text-decoration: none;
             i {
+              display: block;
               color: $Corpo_color_tre;
               font-size: 2rem;
               width: 30px;
@@ -538,7 +546,7 @@ body {
           }
         }
         & .tre__header--close {
-          display: none;
+          //display: none;
           z-index: 40;
           position: absolute;
           width: 30px;
@@ -643,6 +651,13 @@ body {
         }
       }
     }
+    &__ini {
+      &--hero {
+        img {
+          background-image: url('./images/BANDA.jpg');
+        }
+      }
+    }
   }
 
   .tre__tour {
@@ -733,6 +748,12 @@ body {
     &--info {
       text-align: center;
     }
+  }
+  .hide {
+    display: none !important;
+  }
+  .shoow {
+    display: block !important;
   }
 }
 

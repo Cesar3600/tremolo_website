@@ -363,6 +363,14 @@ body {
   text-transform: capitalize;
 }
 
+.show {
+  display: block !important;
+}
+
+.hide {
+  display: hide !important;
+}
+
 @media screen and (min-width: 1150px) and (max-width: 1399px) {
   .tre__header--content .tre__header--burguer {
     display: none;
@@ -428,6 +436,7 @@ body {
     text-decoration: none;
   }
   .tre__header--content .tre__header--burguer a i {
+    display: block;
     color: #91291c;
     font-size: 2rem;
     width: 30px;
@@ -444,7 +453,6 @@ body {
     color: #91291c;
   }
   .tre__header--content .tre__header--close {
-    display: none;
     z-index: 40;
     position: absolute;
     width: 30px;
@@ -533,6 +541,9 @@ body {
     width: 100%;
     max-width: unset;
   }
+  .tre__ini--hero img {
+    background-image: url("./images/BANDA.jpg");
+  }
   .tre__tour--container {
     display: flex;
     flex-direction: column;
@@ -609,6 +620,12 @@ body {
   }
   .tre__contacto--info {
     text-align: center;
+  }
+  .hide {
+    display: none !important;
+  }
+  .shoow {
+    display: block !important;
   }
 }
 @media screen and (max-width: 540px) {
