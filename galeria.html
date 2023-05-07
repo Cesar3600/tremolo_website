@@ -4,17 +4,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TREMOLO</title>
+    <title>TREMOLO - Musica</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!--     <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    /> -->
     <script
       src="https://kit.fontawesome.com/fb8f9519c6.js"
       crossorigin="anonymous"
     ></script>
+
     <link
       href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap"
       rel="stylesheet"
@@ -40,8 +37,8 @@
           </div>
           <nav class="tre__nav" id="nav">
             <ul>
-              <li><a href="" class="selected">inicio</a></li>
-              <li><a href="./galeria.html">galeria</a></li>
+              <li><a href="./index.html">inicio</a></li>
+              <li><a href="" class="selected">galeria</a></li>
               <li><a href="./musica.html">Musica</a></li>
               <li><a href="./tour.html">Tour</a></li>
               <li><a href="./contacto.html">Contacto</a></li>
@@ -49,68 +46,32 @@
           </nav>
         </div>
       </header>
-      <main class="tre__ini">
-        <section class="tre__ini--hero">
-          <img src="./images/frontal.jpg" alt="" />
-        </section>
-        <section class="tre__ini--album">
-          <div class="album__content">
-            <div class="album__content--left">
-              <div class="album__content--left--centered">
-                <div class="description">
-                  <h2>Nuevo álbum disponible en vinilo el 15 de junio.</h2>
-                  <p>
-                    Ya está disponible nuestro nuevo álbum Sin Llorar, puedes
-                    escucharlo en todas las plataformas.
-                  </p>
-                </div>
-                <div class="socialnetwork">
-                  <div class="socialnetwork__content">
-                    <ul>
-                      <li>
-                        <a
-                          href="https://open.spotify.com/artist/3Dx9L4AYIriFXKLRBP0QTr"
-                          target="_blank"
-                        >
-                          <i class="fa fa-spotify"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="https://www.facebook.com/TremoloOficial"
-                          target="_blank"
-                        >
-                          <i class="fa fa-facebook"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="https://www.youtube.com/watch?v=yUu-MnK6K9s"
-                          target="_blank"
-                        >
-                          <i class="fa fa-youtube-play"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="https://www.tiktok.com/@tremolo21?_t=8c6OQnw8sUf&_r=1"
-                          target="_blank"
-                        >
-                          <i class="fa-brands fa-tiktok"></i>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+      <main class="tre__galery">
+        <section class="tre__galery--container">
+          <div class="tre__galery--title">
+            <h2>Galeria</h2>
+          </div>
+          <div class="tre__galery--albums">
+            <div class="tre__galery--albums--items">
+              <img src="./images/Tremolo-PORTADA.jpg" alt="album2" />
             </div>
-            <div class="album__content--right">
-              <div class="album__content--right--image">
-                <img src="./images/Tremolo-PORTADA.jpg" alt="album" />
-              </div>
+            <div class="tre__galery--albums--items">
+              <img src="./images/tremolo_0001.jpg" alt="album2" />
+            </div>
+            <div class="tre__galery--albums--items">
+              <img src="./images/BANDA.jpg" alt="album2" />
+            </div>
+            <div class="tre__galery--albums--items">
+              <img src="./images/frontal.jpg" alt="album2" />
             </div>
           </div>
         </section>
+        <div class="tre__galery--lightbox">
+          <span class="tre__galery--lightbox-close">&times;</span>
+          <div class="tre__galery--lightbox-content">
+            <img src="" alt="Ampliada" />
+          </div>
+        </div>
       </main>
       <footer class="tre__footer">
         <div class="tre__footer--container">
@@ -162,5 +123,5 @@
       </footer>
     </div>
   </body>
-  <script src="./js/script.js"></script>
+  <script src="./js/lightbox.js"></script>
 </html>
